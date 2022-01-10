@@ -6,9 +6,9 @@ class Solution {
         	// a-z까지 소문자, 0-9까지 숫자 - 또는 . 또는 _ 가 아니라면(^가 붙어있으니까) ""로 대체한다 즉 없앤다
         new_id = new_id.replaceAll("[^a-z0-9-._]","");
         	//마침표(.)가 두번이상 연속된다면 "."으로 대체된다 즉 2개이상의 점들이 점하나로 대체된닫
-        new_id = new_id.replaceAll("\\.{2,}",".");
+        new_id = new_id.replaceAll("\\.{2,}","."); ->  new_id = new_id.replaceAll("[.]{2,}",".");
         	// 마침표가 처음이나 끝에 위치한다면 제거한다.
-        new_id = new_id.replaceAll("^(\\.)|(\\.)$","");
+        new_id = new_id.replaceAll("^(\\.)|(\\.)$","");  ->new_id = new_id.replaceAll("^[.]|[.]$",""); 이렇게도 
         	//빈문자열이라면 제거한다.
         if(new_id.isEmpty()){
             new_id="a";
