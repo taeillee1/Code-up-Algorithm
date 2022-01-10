@@ -1,0 +1,30 @@
+class Solution {
+    public String solution(String new_id) {
+        
+	// 대문자를 소문자로 바꾸기
+        new_id = new_id.toLowerCase();
+        	// a-z까지 소문자, 0-9까지 숫자 - 또는 . 또는 _ 가 아니라면(^가 붙어있으니까) ""로 대체한다 즉 없앤다
+        new_id = new_id.replaceAll("[^a-z0-9-._]","");
+        	//마침표(.)가 두번이상 연속된다면 "."으로 대체된다 즉 2개이상의 점들이 점하나로 대체된닫
+        new_id = new_id.replaceAll("\\.{2,}",".");
+        	// 마침표가 처음이나 끝에 위치한다면 제거한다.
+        new_id = new_id.replaceAll("^(\\.)|(\\.)$","");
+        	//빈문자열이라면 제거한다.
+        if(new_id.isEmpty()){
+            new_id="a";
+        }
+        	//16문자 이상이면 15개까지만 나오게 하고 끝에 마침표가 위치한다면 제거한다
+        if(new_id.length() >= 16){
+            new_id=new_id.substring(0,15).replaceAll("(\\.)$","");
+        }
+        	//길이가 2자 이하라면 마지막 문자를 길이가 3이될때까지 반복한다.
+       StringBuilder sb = new StringBuilder(new_id);
+        while(sb.length() < 3) {
+            sb.append(sb.charAt(sb.length()-1));
+        }
+        new_id = sb.toString();
+        //charAt은 괄호안에 있는 위치의 문자를 가져오는것 예를들어 String aa = "hello" 라고있을 때 
+	System.out.println(aa.charAt(0)) 이라고하면 h를 출력하는 것이다.       
+        return new_id;
+    }
+}
