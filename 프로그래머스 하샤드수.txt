@@ -1,0 +1,20 @@
+class Solution {
+    public boolean solution(int x) {
+        boolean answer = true;
+        String a=Integer.toString(x);
+        String[] b = a.split(""); // 문자로 변환하여 배열에 저장
+        int[] c = new int[b.length];
+        int sum=0;
+        for(int i=0; i<b.length; i++) {
+        	c[i]=Integer.parseInt(b[i]); // 숫자를 더하기위해서 숫자로 변환한것도 저장
+            sum+=c[i];
+        }
+        if(x%sum==0){
+            answer = true;
+        }
+        else{
+            answer = false;
+        }
+        return answer;
+    }
+}

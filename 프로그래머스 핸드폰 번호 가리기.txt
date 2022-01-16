@@ -1,0 +1,16 @@
+substring(int a, int b) 문자열의 a부터 b까지의 값을 가져와준다
+replaceAll 내가 원하는 문자를 변환할 때
+
+class Solution {
+    public String solution(String phone_number) {
+        String answer1=phone_number.substring(0,phone_number.length()-4);;
+        String answer2 = phone_number.substring(phone_number.length()-4,phone_number.length());
+        
+        for(int i=0; i<answer1.length(); i++){
+            answer1=answer1.replaceAll("[0-9]","*"); 
+        }
+       
+        
+        return answer1+answer2;
+    }
+}
