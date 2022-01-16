@@ -1,0 +1,17 @@
+import java.util.*;
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        //participant = 마라톤에 참여한 선우들의 이름이 담긴 배열
+        //completion = 완주한 선수들의 이름이 담긴 배열
+        Arrays.sort(participant); 
+        Arrays.sort(completion); 
+        int i; 
+        for ( i=0; i<completion.length; i++){ 
+            if (!participant[i].equals(completion[i])){ 
+                return participant[i]; 
+            } 
+        } 
+        return participant[i];
+
+    }
+}
