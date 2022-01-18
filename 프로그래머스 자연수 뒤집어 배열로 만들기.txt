@@ -1,0 +1,15 @@
+class Solution {
+    public int[] solution(long n) {
+
+        String a = ""+n; // 이렇게하면 문자열 취급가능하다고함
+        int[] answer = new int[a.length()];
+        int i=0;
+        while(n>0){
+            answer[i]=(int)(n%10);
+            n=n/10;
+            i++;
+        }
+        
+        return answer;
+    }
+}

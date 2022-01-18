@@ -1,0 +1,21 @@
+최대 공약수 만들기 : n , m을 넣었을 때 n이큰수이고 m이 작은수가 되게한다음 m의 나머지가 0이 될때까지 함수를 돌리면됨
+최소 공배수 만들기 : n,m을 곱한 후 최대공약수로 나누기
+
+import java.util.*;
+class Solution {
+    public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        int maxnum = Math.max(n,m);
+        int minnum = Math.min(n,m);
+        
+        answer[0]=hello(maxnum,minnum);
+        answer[1]=maxnum*minnum/answer[0];
+        return answer;
+    }
+    
+    public int hello(int p, int q){
+        if(q==0)
+            return p;
+        return hello(q,p%q);
+    }
+}

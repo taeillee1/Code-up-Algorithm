@@ -1,0 +1,14 @@
+import java.util.*;
+class Solution {
+    public long solution(long n) {
+        long answer=0;
+        long a = (long)Math.sqrt(n);//루트를 씌운것하나
+        long b = (long)Math.pow(a,2); //제곱한것하나
+        if(b==n){
+            answer=(long)Math.pow(a+1,2);
+        }else{
+            answer=-1;
+        }
+        return answer;
+    }
+}

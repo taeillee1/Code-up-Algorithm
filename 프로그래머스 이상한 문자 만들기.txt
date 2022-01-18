@@ -1,0 +1,24 @@
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] a= s.split("");
+        int tmp =0;
+        for(int i=0; i<a.length; i++){
+            if((" ").equals(a[i])){
+                tmp=0;
+            }
+            else{
+                if(tmp%2==0){
+                    tmp++;
+                    a[i]=a[i].toUpperCase();
+                }
+                else{
+                    tmp++;
+                    a[i]=a[i].toLowerCase();
+                }
+            }
+            answer += a[i];
+        }
+        return answer;
+    }
+}
