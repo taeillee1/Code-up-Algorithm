@@ -1,0 +1,2 @@
+문자열에서 숫자로 : Integer.toString(숫자)
+숫자를 문자열로 : Integer.parseInt(문자)
